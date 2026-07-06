@@ -1,21 +1,147 @@
-{% extends "base.html" %}
+Here's the updated home_page.html — replace the entire contents:
+html{% extends "base.html" %}
 {% load static %}
 
-{% block body_class %}template-homepage{% endblock %}
-
-{% block extra_css %}
-
-{% comment %}
-Delete the line below if you're just getting started and want to remove the welcome screen!
-{% endcomment %}
-<link rel="stylesheet" href="{% static 'css/welcome_page.css' %}">
-{% endblock extra_css %}
+{% block title %}The Tech Whizz — Home IT Support & Smart Home, Guildford{% endblock %}
 
 {% block content %}
 
-{% comment %}
-Delete the line below if you're just getting started and want to remove the welcome screen!
-{% endcomment %}
-{% include 'home/welcome_page.html' %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <p class="section-label">A bespoke home service to</p>
+                <h1 style="font-size: 3.5rem; font-weight: 900; line-height: 1.1;">
+                    TROUBLESHOOT<br>
+                    <span style="color: var(--cyan);">ALL YOUR TECH</span>
+                </h1>
+                <p class="mt-3 mb-4" style="color: var(--grey); font-size: 1.1rem; max-width: 480px;">
+                    We provide expert solutions for all your technology and Wi-Fi issues. Fast, reliable and professional service in the comfort of your home.
+                </p>
+                <div class="d-flex gap-3 flex-wrap">
+                    <a href="/services/" class="btn btn-whatsapp px-4 py-3">📋 Our Services →</a>
+                    <a href="https://wa.me/447786434760" class="btn btn-outline-light px-4 py-3" target="_blank">💬 Get in Touch</a>
+                </div>
+                <div class="d-flex gap-4 mt-4 flex-wrap">
+                    <div style="font-size: 0.9rem;">
+                        🛡️ <strong style="color:white;">Trusted</strong><br>
+                        <span style="color: var(--grey);">Local Experts</span>
+                    </div>
+                    <div style="font-size: 0.9rem;">
+                        ⚡ <strong style="color:white;">Quick Response</strong><br>
+                        <span style="color: var(--grey);">Same Day Service</span>
+                    </div>
+                    <div style="font-size: 0.9rem;">
+                        ✅ <strong style="color:white;">Satisfaction</strong><br>
+                        <span style="color: var(--grey);">Guaranteed</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="section-white-angled">
+    <div class="container">
+        <div class="text-center mb-5">
+            <p class="section-label">What We Do</p>
+            <h2 class="section-title">Comprehensive Home Tech Services</h2>
+            <p style="color: #555; max-width: 600px; margin: 0 auto;">
+                From fixing everyday tech problems to designing smart home systems, we make technology work for you.
+            </p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="service-card-white">
+                    <i class="bi bi-wifi"></i>
+                    <h5>Home Wi-Fi</h5>
+                    <p>Fixing dead zones, weak signals and connectivity issues throughout your home.</p>
+                    <a href="/services/" style="color: var(--cyan); text-decoration: none; font-weight: 600;">Learn more →</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-card-white">
+                    <i class="bi bi-laptop"></i>
+                    <h5>Home IT Support</h5>
+                    <p>Help with computers, laptops, devices, software and anything tech-related.</p>
+                    <a href="/services/" style="color: var(--cyan); text-decoration: none; font-weight: 600;">Learn more →</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-card-white">
+                    <i class="bi bi-router"></i>
+                    <h5>Home Broadband</h5>
+                    <p>Troubleshoot and get the best possible performance from your broadband connection.</p>
+                    <a href="/services/" style="color: var(--cyan); text-decoration: none; font-weight: 600;">Learn more →</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-card-white">
+                    <i class="bi bi-lightbulb"></i>
+                    <h5>Hue Lighting</h5>
+                    <p>Design, install and optimise Philips Hue smart lighting systems in your home.</p>
+                    <a href="/services/" style="color: var(--cyan); text-decoration: none; font-weight: 600;">Learn more →</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-card-white">
+                    <i class="bi bi-camera-video"></i>
+                    <h5>CCTV</h5>
+                    <p>Home security camera installation with remote viewing for peace of mind.</p>
+                    <a href="/services/" style="color: var(--cyan); text-decoration: none; font-weight: 600;">Learn more →</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-card-white">
+                    <i class="bi bi-bag-check"></i>
+                    <h5>Equipment Advice, Supply & Training</h5>
+                    <p>Honest advice, professional installation and one-to-one training on your devices.</p>
+                    <a href="/services/" style="color: var(--cyan); text-decoration: none; font-weight: 600;">Learn more →</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-card-white">
+                    <i class="bi bi-diagram-3"></i>
+                    <h5>Home Networking</h5>
+                    <p>Improve coverage and connect all your devices seamlessly across your home.</p>
+                    <a href="/services/" style="color: var(--cyan); text-decoration: none; font-weight: 600;">Learn more →</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-card-white">
+                    <i class="bi bi-house-heart"></i>
+                    <h5>Smart Home</h5>
+                    <p>Smart home setup, automation and connected devices tailored to your lifestyle.</p>
+                    <a href="/services/" style="color: var(--cyan); text-decoration: none; font-weight: 600;">Learn more →</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-card-white">
+                    <i class="bi bi-phone"></i>
+                    <h5>Sell Your Tech</h5>
+                    <p>Looking to sell your old devices? We can help you get the best value for them.</p>
+                    <a href="/services/" style="color: var(--cyan); text-decoration: none; font-weight: 600;">Learn more →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WhatsApp CTA Section -->
+<section class="section-dark py-5">
+    <div class="container">
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+            <div>
+                <h4 class="text-white mb-1">Need help with your home tech?</h4>
+                <p style="color: var(--grey); margin:0;">Chat with us on WhatsApp for fast, friendly advice.</p>
+            </div>
+            <a href="https://wa.me/447786434760" class="btn btn-whatsapp px-4 py-3" target="_blank">
+                💬 Chat on WhatsApp
+            </a>
+        </div>
+    </div>
+</section>
 
 {% endblock content %}

@@ -67,7 +67,7 @@ TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
-            PROJECT_DIR / "templates",
+            BASE_DIR / "templates",
         ],
         "APP_DIRS": True,
         "OPTIONS": {
@@ -135,10 +135,10 @@ STATICFILES_FINDERS = [
 ]
 
 STATICFILES_DIRS = [
-    PROJECT_DIR / "static",
+    BASE_DIR / "static",
 ]
 
-STATIC_ROOT = BASE_DIR / "static"
+STATIC_ROOT = BASE_DIR / "staticfiles"
 STATIC_URL = "/static/"
 
 MEDIA_ROOT = BASE_DIR / "media"
