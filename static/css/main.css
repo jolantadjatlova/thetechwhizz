@@ -97,8 +97,8 @@ body {
 /* ===== HERO ===== */
 .hero {
     background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 55%, var(--navy-light) 100%);
-    padding: 80px 0;
-    min-height: 90vh;
+    padding: 40px 0;
+    min-height: auto;
     display: flex;
     align-items: center;
 }
@@ -179,7 +179,7 @@ body {
 .section-white-angled {
     background-color: #ffffff;
     position: relative;
-    padding: 80px 0;
+    padding: 10px 0;
 }
 
 .section-white-angled::before {
