@@ -222,6 +222,21 @@ body {
 .site-footer {
     background-color: var(--navy);
     border-top: 1px solid var(--navy-mid);
+    color: #ffffff;
+}
+.site-footer p {
+    color: #8a9db5;
+}
+
+.site-footer h6 {
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.site-footer .copyright {
+    color: #8a9db5;
+    font-size: 0.85rem;
 }
 
 .footer-link {
