@@ -7,9 +7,13 @@
 
 <!-- Hero Section -->
 <section class="hero" style="position: relative; overflow: hidden;">
-    <!-- Canvas Animation -->
-    <canvas id="hero-canvas" style="position: absolute; top: 0; right: 0; width: 55%; height: 100%; z-index: 0;"></canvas>
-    
+    <!-- Hero Video (masked to blend into navy background) -->
+    <div class="hero-video-wrap">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="{% static 'videos/hero-smart-home.mp4' %}" type="video/mp4">
+        </video>
+    </div>
+
     <div class="container" style="position: relative; z-index: 1;">
         <div class="row align-items-center">
             <div class="col-lg-6">
@@ -66,7 +70,6 @@
                 <div class="service-card-white">
                     <i class="bi bi-wifi"></i>
                     <h5>Home Wi-Fi</h5>
-                    <p>Fixing dead zones, weak signals and connectivity issues throughout your home.</p>
                     <a href="/services/" style="color: var(--cyan); text-decoration: none; font-weight: 600;">Learn more →</a>
                 </div>
             </div>
@@ -74,7 +77,6 @@
                 <div class="service-card-white">
                     <i class="bi bi-laptop"></i>
                     <h5>Home IT Support</h5>
-                    <p>Help with computers, laptops, devices, software and anything tech-related.</p>
                     <a href="/services/" style="color: var(--cyan); text-decoration: none; font-weight: 600;">Learn more →</a>
                 </div>
             </div>
@@ -82,7 +84,6 @@
                 <div class="service-card-white">
                     <i class="bi bi-router"></i>
                     <h5>Home Broadband</h5>
-                    <p>Troubleshoot and get the best possible performance from your broadband connection.</p>
                     <a href="/services/" style="color: var(--cyan); text-decoration: none; font-weight: 600;">Learn more →</a>
                 </div>
             </div>
@@ -90,7 +91,6 @@
                 <div class="service-card-white">
                     <i class="bi bi-lightbulb"></i>
                     <h5>Hue Lighting</h5>
-                    <p>Design, install and optimise Philips Hue smart lighting systems in your home.</p>
                     <a href="/services/" style="color: var(--cyan); text-decoration: none; font-weight: 600;">Learn more →</a>
                 </div>
             </div>
@@ -98,7 +98,6 @@
                 <div class="service-card-white">
                     <i class="bi bi-camera-video"></i>
                     <h5>CCTV</h5>
-                    <p>Home security camera installation with remote viewing for peace of mind.</p>
                     <a href="/services/" style="color: var(--cyan); text-decoration: none; font-weight: 600;">Learn more →</a>
                 </div>
             </div>
@@ -106,7 +105,6 @@
                 <div class="service-card-white">
                     <i class="bi bi-bag-check"></i>
                     <h5>Equipment Advice, Supply & Training</h5>
-                    <p>Honest advice, professional installation and one-to-one training on your devices.</p>
                     <a href="/services/" style="color: var(--cyan); text-decoration: none; font-weight: 600;">Learn more →</a>
                 </div>
             </div>
@@ -114,7 +112,6 @@
                 <div class="service-card-white">
                     <i class="bi bi-diagram-3"></i>
                     <h5>Home Networking</h5>
-                    <p>Improve coverage and connect all your devices seamlessly across your home.</p>
                     <a href="/services/" style="color: var(--cyan); text-decoration: none; font-weight: 600;">Learn more →</a>
                 </div>
             </div>
@@ -122,7 +119,6 @@
                 <div class="service-card-white">
                     <i class="bi bi-house-heart"></i>
                     <h5>Smart Home</h5>
-                    <p>Smart home setup, automation and connected devices tailored to your lifestyle.</p>
                     <a href="/services/" style="color: var(--cyan); text-decoration: none; font-weight: 600;">Learn more →</a>
                 </div>
             </div>
@@ -130,7 +126,6 @@
                 <div class="service-card-white">
                     <i class="bi bi-phone"></i>
                     <h5>Sell Your Tech</h5>
-                    <p>Looking to sell your old devices? We can help you get the best value for them.</p>
                     <a href="/services/" style="color: var(--cyan); text-decoration: none; font-weight: 600;">Learn more →</a>
                 </div>
             </div>
@@ -139,7 +134,3 @@
 </section>
 
 {% endblock content %}
-
-{% block extra_js %}
-<script src="{% static 'js/hero-canvas.js' %}"></script>
-{% endblock %}
