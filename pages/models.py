@@ -46,10 +46,24 @@ class TestimonialsPage(Page):
 
     content_panels = Page.content_panels + [
         FieldPanel('body'),
+        InlinePanel('testimonial_items', label="Testimonials"),
     ]
 
     class Meta:
         verbose_name = "Testimonials Page"
+
+
+class Testimonial(Orderable):
+    page = ParentalKey(TestimonialsPage, on_delete=models.CASCADE, related_name="testimonial_items")
+    author_name = models.CharField(max_length=100)
+    quote = models.TextField()
+    rating = models.PositiveSmallIntegerField(default=5, help_text="Star rating out of 5")
+
+    panels = [
+        FieldPanel("author_name"),
+        FieldPanel("quote"),
+        FieldPanel("rating"),
+    ]
 
 
 class ContactPage(Page):

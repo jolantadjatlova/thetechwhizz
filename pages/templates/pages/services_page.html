@@ -4,7 +4,7 @@
 {% block title %}Services — The Tech Whizz{% endblock %}
 
 {% block content %}
-<section class="section section-dark">
+<section class="section section-light">
     <div class="container">
         <div class="text-center mb-5">
             <p class="section-label">What We Do</p>
@@ -15,9 +15,9 @@
         </div>
 
         {% for service in page.service_details.all %}
-        <div id="{{ service.anchor_id }}" class="mb-5 pb-4" style="border-bottom: 1px solid var(--navy-mid);">
+        <div id="{{ service.anchor_id }}" class="mb-5 pb-4" style="border-bottom: 1px solid #dde3e8;">
             <h3 style="color: var(--cyan); font-weight: 700;">{{ service.title }}</h3>
-            <div style="color: var(--grey); line-height: 1.7;">
+            <div style="color: #444; line-height: 1.7;">
                 {{ service.body|richtext }}
             </div>
         </div>

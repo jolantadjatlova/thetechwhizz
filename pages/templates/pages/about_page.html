@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags %}
+
+{% block title %}About Us — The Tech Whizz{% endblock %}
+
+{% block content %}
+<section class="section section-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <p class="section-label">Who We Are</p>
+            <h2 class="section-title">{{ page.title }}</h2>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8" style="color: #444; line-height: 1.7; font-size: 1.05rem;">
+                {{ page.body|richtext }}
+            </div>
+        </div>
+
+    </div>
+</section>
+{% endblock content %}

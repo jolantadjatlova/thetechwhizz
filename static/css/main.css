@@ -129,6 +129,16 @@ h1, h2, h3 {
 
 .section-dark {
     background-color: var(--navy-mid);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.section-light {
+    background-color: #f0f4f7;
+}
+
+.section-light .section-title {
+    color: #1a1a2e;
 }
 
 .section-title {
@@ -199,6 +209,52 @@ h1, h2, h3 {
     color: #666;
     font-size: 0.9rem;
     line-height: 1.6;
+}
+
+.testimonial-card {
+    background-color: var(--cyan);
+    border: none;
+    border-radius: 12px;
+    padding: 40px 32px;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.testimonial-card i.bi-quote {
+    font-size: 2.5rem;
+    color: rgba(255,255,255,0.6);
+    display: block;
+    margin-bottom: 12px;
+}
+
+.testimonial-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+.stars {
+    color: #ffe066;
+    font-size: 1.2rem;
+    margin: 16px 0 8px;
+}
+
+.testimonial-name {
+    font-weight: 700;
+    color: #ffffff !important;
+    margin-bottom: 0;
+}
+
+.carousel-indicators button {
+    background-color: var(--navy-light) !important;
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50%;
+}
+
+.carousel-indicators button.active {
+    background-color: var(--cyan) !important;
 }
 
 /* ===== WHITE SECTION WITH CYAN CORNERS ===== */

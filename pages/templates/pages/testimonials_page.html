@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags %}
+
+{% block title %}Testimonials — The Tech Whizz{% endblock %}
+
+{% block content %}
+<section class="section section-light py-5">
+    <div class="container text-center">
+        <p class="section-label">Testimonials</p>
+        <h2 class="section-title mb-2">What People Are Saying</h2>
+        {% if page.body %}
+            <div style="color: var(--grey);" class="mb-5">{{ page.body|richtext }}</div>
+        {% endif %}
+
+        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                {% for testimonial in page.testimonial_items.all %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                    <div class="testimonial-card mx-auto">
+                        <i class="bi bi-quote"></i>
+                        <p>{{ testimonial.quote }}</p>
+                        <div class="stars">{% for i in "12345" %}{% if forloop.counter <= testimonial.rating %}★{% else %}☆{% endif %}{% endfor %}</div>
+                        <p class="testimonial-name">{{ testimonial.author_name }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+
+            <div class="carousel-indicators position-static mt-4">
+                {% for testimonial in page.testimonial_items.all %}
+                <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active"{% endif %}></button>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
