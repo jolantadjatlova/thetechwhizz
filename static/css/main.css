@@ -80,7 +80,7 @@ body {
 
 /* ===== WHATSAPP BUTTON ===== */
 .btn-whatsapp {
-    background-color: var(--whatsapp-green);
+    background-color: var(--cyan);
     color: var(--white);
     border: none;
     border-radius: 8px;
