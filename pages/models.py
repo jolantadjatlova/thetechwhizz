@@ -1,8 +1,12 @@
 from django.db import models
+from django.shortcuts import render, redirect
+from django.contrib import messages
 from wagtail.models import Page, Orderable
 from wagtail.fields import RichTextField
 from wagtail.admin.panels import FieldPanel, InlinePanel
 from modelcluster.fields import ParentalKey
+
+from .forms import ContactForm
 
 
 class AboutPage(Page):
@@ -75,3 +79,17 @@ class ContactPage(Page):
 
     class Meta:
         verbose_name = "Contact Page"
+
+    def serve(self, request, *args, **kwargs):
+        form = ContactForm()
+
+        if request.method == 'POST':
+            form = ContactForm(request.POST)
+            if form.is_valid():
+                # Email sending will be added here once we have Ben's SMTP details
+                messages.success(request, "Thanks for your message! We'll be in touch soon.")
+                return redirect(self.url)
+
+        context = self.get_context(request)
+        context['form'] = form
+        return render(request, self.get_template(request), context)

@@ -300,6 +300,12 @@ h1, h2, h3 {
     color: #555;
 }
 
+/* ===== CONTACT FORM ===== */
+.contact-form label {
+    color: #1a1a2e;
+    font-weight: 600;
+}
+
 /* ===== FOOTER ===== */
 .site-footer {
     background-color: var(--navy);
