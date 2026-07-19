@@ -37,11 +37,19 @@ class ServiceDetail(Orderable):
     anchor_id = models.SlugField(max_length=50, help_text="Short code, e.g. 'wifi' — no spaces")
     title = models.CharField(max_length=100)
     body = RichTextField()
+    image = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
 
     panels = [
         FieldPanel("anchor_id"),
         FieldPanel("title"),
         FieldPanel("body"),
+        FieldPanel("image"),
     ]
 
 
