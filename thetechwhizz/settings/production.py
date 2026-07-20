@@ -17,6 +17,7 @@ CSRF_TRUSTED_ORIGINS = [
 # (e.g. after a Wagtail upgrade).
 # See https://docs.djangoproject.com/en/6.0/ref/contrib/staticfiles/#manifeststaticfilesstorage
 STORAGES["staticfiles"]["BACKEND"] = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+WHITENOISE_MANIFEST_STRICT = False
 
 # Cloudinary for media storage (Heroku's filesystem is ephemeral,
 # so uploaded images/media need to persist elsewhere)
