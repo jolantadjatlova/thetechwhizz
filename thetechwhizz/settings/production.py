@@ -1,4 +1,5 @@
 import os
+import cloudinary
 from .base import *
 
 DEBUG = False
@@ -16,6 +17,17 @@ CSRF_TRUSTED_ORIGINS = [
 # (e.g. after a Wagtail upgrade).
 # See https://docs.djangoproject.com/en/6.0/ref/contrib/staticfiles/#manifeststaticfilesstorage
 STORAGES["staticfiles"]["BACKEND"] = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+# Cloudinary for media storage (Heroku's filesystem is ephemeral,
+# so uploaded images/media need to persist elsewhere)
+cloudinary.config(
+    cloud_name=os.environ.get("CLOUDINARY_CLOUD_NAME"),
+    api_key=os.environ.get("CLOUDINARY_API_KEY"),
+    api_secret=os.environ.get("CLOUDINARY_API_SECRET"),
+    secure=True,
+)
+
+STORAGES["default"]["BACKEND"] = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
 LOGGING = {
     "version": 1,
