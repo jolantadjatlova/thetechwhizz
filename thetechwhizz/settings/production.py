@@ -28,6 +28,7 @@ cloudinary.config(
 )
 
 STORAGES["default"]["BACKEND"] = "cloudinary_storage.storage.MediaCloudinaryStorage"
+STATICFILES_STORAGE = STORAGES["staticfiles"]["BACKEND"]
 
 LOGGING = {
     "version": 1,
