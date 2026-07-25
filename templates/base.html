@@ -1,3 +1,4 @@
+html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -119,32 +120,78 @@
 
     <!-- Footer -->
     <footer class="site-footer">
-        <div class="container py-4">
-            <div class="row align-items-center g-3">
+        <div class="container py-5">
+            <div class="row align-items-start">
                 <!-- Logo -->
-                <div class="col-md-4 text-center text-md-start">
-                    <img src="{% static 'images/whizz_logo_dark.png' %}" alt="Tech Whizz Logo" style="height: 120px !important;">
+                <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                    <img src="{% static 'images/whizz_logo_dark.png' %}" alt="Tech Whizz Logo" style="height:90px;">
+                    <p style="color:#b9cfdc;font-size:.9rem;margin-top:10px;">
+                        Friendly home tech support across Surrey.
+                    </p>
                 </div>
+
+                <!-- Services -->
+                <div class="col-lg-3 ms-lg-auto col-md-6">
+                    <h6 class="mb-3">Services</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a class="footer-link" href="/services/#wifi">
+                                <i class="bi bi-check-circle text-info"></i> Home Wi-Fi
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="footer-link" href="/services/#it-support">
+                                <i class="bi bi-check-circle text-info"></i> Home IT Support
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="footer-link" href="/services/#broadband">
+                                <i class="bi bi-check-circle text-info"></i> Home Broadband
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="footer-link" href="/services/#cctv">
+                                <i class="bi bi-check-circle text-info"></i> CCTV
+                            </a>
+                        </li>
+                        <li class="mb-3">
+                            <a class="footer-link" href="/services/#smart-home">
+                                <i class="bi bi-check-circle text-info"></i> Smart Home
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="/services/" style="color:var(--cyan);text-decoration:none;font-weight:600;">
+                        View all services →
+                    </a>
+                </div>
+
                 <!-- Contact -->
-                <div class="col-md-4 text-center">
-                    <p style="color: #ffffff; font-weight: 700; font-size: 1.1rem; margin-bottom: 8px; letter-spacing: 1px;">Contact Us</p>
-                    <a href="tel:07359107625" style="color: #b9cfdc; text-decoration: none; display: block; font-size: 0.95rem; margin-bottom: 4px;">
-                        <i class="bi bi-telephone" style="color: var(--cyan);"></i> 07359 107625
+                <div class="col-lg-3 ms-lg-auto col-md-6">
+                    <h6 class="mb-3">Get In Touch</h6>
+                    <a class="footer-link d-block mb-2" href="tel:07359107625">
+                        <i class="bi bi-telephone text-info"></i> 07359 107625
                     </a>
-                    <a href="mailto:info@thetechwhizz.co.uk" style="color: #b9cfdc; text-decoration: none; display: block; font-size: 0.95rem; margin-bottom: 4px;">
-                        <i class="bi bi-envelope" style="color: var(--cyan);"></i> info@thetechwhizz.co.uk
+                    <a class="footer-link d-block mb-2" href="mailto:info@thetechwhizz.co.uk">
+                        <i class="bi bi-envelope text-info"></i> info@thetechwhizz.co.uk
                     </a>
-                    <span style="color: #b9cfdc; font-size: 0.95rem;">
-                        <i class="bi bi-geo-alt" style="color: var(--cyan);"></i> Guildford, Surrey
-                    </span>
-                </div>
-                <!-- Copyright + WhatsApp -->
-                <div class="col-md-4 text-center text-md-end">
-                    <p style="color: #ffffff; font-weight: 700; font-size: 1.1rem; margin-bottom: 8px; letter-spacing: 1px;">Chat With Us</p>
+                    <div class="footer-link mb-3">
+                        <i class="bi bi-geo-alt text-info"></i> Guildford, Surrey
+                    </div>
                     <a href="https://wa.me/447359107625" target="_blank">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width: 32px; height: 32px;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width:26px;">
                     </a>
-                    <p style="color: #5a7a94; font-size: 1rem; margin: 8px 0 0 0;">© 2026 The Tech Whizz. All rights reserved.</p>
+                </div>
+            </div>
+
+            <!-- Bottom -->
+            <div class="row mt-5 pt-4 border-top">
+                <div class="col text-center">
+                    <p class="copyright mb-0">
+                        © 2026 The Tech Whizz. All rights reserved.
+                        <a href="/privacy-policy/" class="footer-link d-inline ms-2" style="display:inline;">
+                            Privacy Policy
+                        </a>
+                    </p>
                 </div>
             </div>
         </div>
