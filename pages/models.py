@@ -101,3 +101,14 @@ class ContactPage(Page):
         context = self.get_context(request)
         context['form'] = form
         return render(request, self.get_template(request), context)
+
+
+class PrivacyPolicyPage(Page):
+    body = RichTextField(blank=True)
+
+    content_panels = Page.content_panels + [
+        FieldPanel('body'),
+    ]
+
+    class Meta:
+        verbose_name = "Privacy Policy Page"
