@@ -4,25 +4,46 @@
 {% block title %}Services — The Tech Whizz{% endblock %}
 
 {% block content %}
-<section class="section section-light">
+<section class="section" style="background-color: #eef1f4;">
+    <div class="container text-center mb-5">
+        <p class="section-label">What We Do</p>
+        <h2 class="section-title" style="color: #1a1a2e;">Our Services</h2>
+    </div>
+
     <div class="container">
-        <div class="text-center mb-5">
-            <p class="section-label">What We Do</p>
-            <h2 class="section-title">Our Services</h2>
-            {% if page.intro %}
-                <div>{{ page.intro|richtext }}</div>
-            {% endif %}
-        </div>
+        {% if page.intro %}
+            <div style="color: #555;" class="mb-5 text-center">{{ page.intro|richtext }}</div>
+        {% endif %}
 
         {% for service in page.service_details.all %}
-        <div id="{{ service.anchor_id }}" class="mb-5 pb-4" style="border-bottom: 1px solid #dde3e8;">
-            <h3 style="color: var(--cyan); font-weight: 700;">{{ service.title }}</h3>
-            <div style="color: #444; line-height: 1.7;">
-                {{ service.body|richtext }}
+        <div class="service-box mb-4" id="{{ service.anchor_id }}">
+            <div class="row g-0 align-items-center">
+                {% if forloop.counter|divisibleby:2 %}
+                    <!-- Even: text left, image right -->
+                    <div class="col-md-6 p-4">
+                        <h3 style="color: var(--cyan); font-weight: 700;">{{ service.title }}</h3>
+                        <div style="color: #444;">{{ service.body|richtext }}</div>
+                    </div>
+                    <div class="col-md-6">
+                        {% if service.image %}
+                            <img src="{{ service.image.file.url }}" alt="{{ service.title }}" class="service-box-img">
+                        {% endif %}
+                    </div>
+                {% else %}
+                    <!-- Odd: image left, text right -->
+                    <div class="col-md-6">
+                        {% if service.image %}
+                            <img src="{{ service.image.file.url }}" alt="{{ service.title }}" class="service-box-img">
+                        {% endif %}
+                    </div>
+                    <div class="col-md-6 p-4">
+                        <h3 style="color: var(--cyan); font-weight: 700;">{{ service.title }}</h3>
+                        <div style="color: #444;">{{ service.body|richtext }}</div>
+                    </div>
+                {% endif %}
             </div>
         </div>
         {% endfor %}
-
     </div>
 </section>
 {% endblock content %}
