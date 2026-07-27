@@ -9,34 +9,32 @@
         <p class="section-label">What We Do</p>
         <h2 class="section-title" style="color: #1a1a2e;">Our Services</h2>
     </div>
-
     <div class="container">
         {% if page.intro %}
             <div style="color: #555;" class="mb-5 text-center">{{ page.intro|richtext }}</div>
         {% endif %}
-
         {% for service in page.service_details.all %}
         <div class="service-box mb-4" id="{{ service.anchor_id }}">
             <div class="row g-0 align-items-center">
                 {% if forloop.counter|divisibleby:2 %}
                     <!-- Even: text left, image right -->
-                    <div class="col-md-6 p-4">
+                    <div class="col-md-7 p-4">
                         <h3 style="color: var(--cyan); font-weight: 700;">{{ service.title }}</h3>
                         <div style="color: #444;">{{ service.body|richtext }}</div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-5">
                         {% if service.image %}
                             <img src="{{ service.image.file.url }}" alt="{{ service.title }}" class="service-box-img">
                         {% endif %}
                     </div>
                 {% else %}
                     <!-- Odd: image left, text right -->
-                    <div class="col-md-6">
+                    <div class="col-md-5">
                         {% if service.image %}
                             <img src="{{ service.image.file.url }}" alt="{{ service.title }}" class="service-box-img">
                         {% endif %}
                     </div>
-                    <div class="col-md-6 p-4">
+                    <div class="col-md-7 p-4">
                         <h3 style="color: var(--cyan); font-weight: 700;">{{ service.title }}</h3>
                         <div style="color: #444;">{{ service.body|richtext }}</div>
                     </div>
