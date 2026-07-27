@@ -29,7 +29,7 @@ h1, h2, h3 {
 }
 
 .site-navbar .navbar-brand img {
-    height: 80px;
+    height: 100px;
     width: auto;
 }
 .site-navbar .container {
@@ -203,35 +203,41 @@ h1, h2, h3 {
     background-color: var(--cyan);
     border: none;
     border-radius: 12px;
-    padding: 40px 32px;
-    max-width: 500px;
+    padding: 24px 20px;
+    max-width: 340px;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     position: relative;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    margin: 0 auto;
 }
 
 .testimonial-card i.bi-quote {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     color: rgba(255,255,255,0.6);
     display: block;
-    margin-bottom: 12px;
+    margin-bottom: 6px;
 }
 
 .testimonial-card p {
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 0.8rem;
+    line-height: 1.4;
     color: #ffffff;
 }
 
 .stars {
     color: #ffe066;
-    font-size: 1.2rem;
-    margin: 16px 0 8px;
+    font-size: 0.9rem;
+    margin: 8px 0 4px;
 }
 
 .testimonial-name {
     font-weight: 700;
     color: #ffffff !important;
     margin-bottom: 0;
+    font-size: 0.9rem;
 }
 
 .carousel-indicators button {
