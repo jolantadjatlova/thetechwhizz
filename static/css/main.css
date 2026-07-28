@@ -72,6 +72,53 @@ h1, h2, h3 {
     color: #ffffff;
 }
 
+/* ===== SERVICES DROPDOWN ===== */
+.dropdown-menu {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    padding: 10px 0;
+    margin-top: 8px;
+}
+
+.dropdown-item {
+    color: #1a1a2e;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 20px;
+    transition: background-color 0.15s, color 0.15s;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: rgba(51, 194, 224, 0.1);
+    color: var(--cyan);
+}
+
+.dropdown-item.fw-bold {
+    color: var(--cyan);
+}
+
+.dropdown-item.fw-bold:hover {
+    background-color: rgba(51, 194, 224, 0.1);
+    color: var(--cyan);
+}
+
+.dropdown-divider {
+    margin: 8px 0;
+    border-color: #eee;
+}
+
+.nav-link.dropdown-toggle {
+    display: flex;
+    align-items: center;
+}
+
+.nav-link.dropdown-toggle::after {
+    margin-left: 6px;
+    vertical-align: 0;
+}
+
 /* ===== WHATSAPP BUTTON ===== */
 .btn-whatsapp {
     background-color: var(--cyan);
