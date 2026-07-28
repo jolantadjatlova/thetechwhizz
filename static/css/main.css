@@ -214,6 +214,19 @@ h1, h2, h3 {
     display: block;
     border-radius: 8px;
 }
+
+/* ===== SCROLL REVEAL ANIMATION ===== */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .testimonial-card {
     background-color: var(--cyan);
     border: none;

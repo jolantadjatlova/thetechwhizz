@@ -14,7 +14,7 @@
             <div style="color: #555;" class="mb-5 text-center">{{ page.intro|richtext }}</div>
         {% endif %}
         {% for service in page.service_details.all %}
-        <div class="service-box mb-4" id="{{ service.anchor_id }}">
+        <div class="service-box reveal-on-scroll mb-4" id="{{ service.anchor_id }}">
             <div class="row g-0 align-items-center">
                 {% if forloop.counter|divisibleby:2 %}
                     <!-- Even: text left, image right -->
@@ -45,3 +45,24 @@
     </div>
 </section>
 {% endblock content %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const revealElements = document.querySelectorAll('.reveal-on-scroll');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.15
+    });
+
+    revealElements.forEach(el => observer.observe(el));
+});
+</script>
+{% endblock extra_js %}
