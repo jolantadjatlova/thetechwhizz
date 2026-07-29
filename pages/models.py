@@ -53,31 +53,6 @@ class ServiceDetail(Orderable):
     ]
 
 
-class TestimonialsPage(Page):
-    body = RichTextField(blank=True)
-
-    content_panels = Page.content_panels + [
-        FieldPanel('body'),
-        InlinePanel('testimonial_items', label="Testimonials"),
-    ]
-
-    class Meta:
-        verbose_name = "Testimonials Page"
-
-
-class Testimonial(Orderable):
-    page = ParentalKey(TestimonialsPage, on_delete=models.CASCADE, related_name="testimonial_items")
-    author_name = models.CharField(max_length=100)
-    quote = models.TextField()
-    rating = models.PositiveSmallIntegerField(default=5, help_text="Star rating out of 5")
-
-    panels = [
-        FieldPanel("author_name"),
-        FieldPanel("quote"),
-        FieldPanel("rating"),
-    ]
-
-
 class ContactPage(Page):
     body = RichTextField(blank=True)
 
@@ -94,7 +69,6 @@ class ContactPage(Page):
         if request.method == 'POST':
             form = ContactForm(request.POST)
             if form.is_valid():
-                # Email sending will be added here once we have Ben's SMTP details
                 messages.success(request, "Thanks for your message! We'll be in touch soon.")
                 return redirect(self.url)
 
