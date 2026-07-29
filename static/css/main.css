@@ -286,11 +286,11 @@ h1, h2, h3 {
     border: none;
     border-radius: 12px;
     padding: 24px 20px;
-    max-width: 340px;
-    min-height: 280px;
+    height: 280px;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     position: relative;
     box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     margin: 0 auto;
@@ -313,6 +313,7 @@ h1, h2, h3 {
     color: #ffe066;
     font-size: 0.9rem;
     margin: 8px 0 4px;
+    text-align: center;
 }
 
 .testimonial-name {

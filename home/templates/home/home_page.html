@@ -7,7 +7,6 @@
 
 <!-- Hero Section -->
 <section class="hero" style="position: relative; overflow: hidden;">
-    <!-- Hero Video (masked to blend into navy background) -->
     <div class="hero-video-wrap">
         <video autoplay muted loop playsinline class="hero-video">
             <source src="{% static 'videos/hero-smart-home.mp4' %}" type="video/mp4">
@@ -17,18 +16,14 @@
     <div class="container" style="position: relative; z-index: 1;">
         <div class="row align-items-center">
             <div class="col-lg-6">
-
                 <span class="hero-badge">Local Experts. Friendly Service.</span>
-
                 <h1 style="font-size: 3rem; font-weight: 900; line-height: 1.15; margin-top: 16px;">
                     Home Tech Support,<br>
                     <span style="color: var(--cyan);">Without</span> the Hassle.
                 </h1>
-
                 <p class="mt-3 mb-4" style="color: var(--grey); font-size: 1.1rem; max-width: 480px;">
                     Fast, friendly help with Wi-Fi, broadband, computers and smart-home technology — all in the comfort of your home.
                 </p>
-
                 <div class="d-flex gap-3 flex-wrap mb-4">
                     <a href="https://wa.me/447359107625" class="btn btn-whatsapp px-4 py-3" target="_blank">
                         <i class="bi bi-calendar-check"></i> Book a Home Visit
@@ -37,52 +32,34 @@
                         View Our Services →
                     </a>
                 </div>
-
-                <!-- Trust badges row -->
                 <div class="trust-badges">
                     <div class="trust-badge">
                         <i class="bi bi-geo-alt"></i>
-                        <div>
-                            <strong>Local &amp; Trusted</strong>
-                            <span>Based nearby, help when you need it</span>
-                        </div>
+                        <div><strong>Local & Trusted</strong></div>
                     </div>
                     <div class="trust-badge">
                         <i class="bi bi-clock"></i>
-                        <div>
-                            <strong>Fast Response</strong>
-                            <span>We aim to visit quickly</span>
-                        </div>
+                        <div><strong>Fast Response</strong></div>
                     </div>
                     <div class="trust-badge">
                         <i class="bi bi-shield-check"></i>
-                        <div>
-                            <strong>Expert Support</strong>
-                            <span>Friendly experts who explain things simply</span>
-                        </div>
+                        <div><strong>Expert Support</strong></div>
                     </div>
                     <div class="trust-badge">
                         <i class="bi bi-star"></i>
-                        <div>
-                            <strong>5<span style="color: #ffe066;">★</span> Rated</strong>
-                            <span>Top rated by local customers</span>
-                        </div>
+                        <div><strong>5<span style="color: #ffe066;">★</span> Rated</strong></div>
                     </div>
                 </div>
-
-                <!-- Google review line -->
                 <div class="google-review-line mt-3">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" style="width: 18px; height: 18px;">
                     <span class="stars-inline">★★★★★</span>
                     Rated 5.0 by our customers
                     <a href="https://share.google/DEr6RrDLYbzDpUSyg" target="_blank">See our reviews →</a>
                 </div>
-
             </div>
         </div>
     </div>
 
-    <!-- WhatsApp Bubble (smaller) -->
     <a href="https://wa.me/447359107625" target="_blank" class="whatsapp-bubble-small">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
         <span>Chat on WhatsApp</span>
@@ -93,6 +70,7 @@
 <section class="section-white-angled pb-5">
     <div class="container">
         <div class="text-center mb-5">
+            <p class="section-label">What We Do</p>
             <h2 class="section-title">Comprehensive Home Tech Services</h2>
         </div>
         <div class="row g-4">
@@ -169,7 +147,8 @@
         <div class="text-center mb-5">
             <h2 class="section-title">Testimonials</h2>
         </div>
-        <div id="testimonialsCarousel" class="carousel slide px-5" data-bs-ride="carousel" data-bs-interval="5000">
+
+        <div id="testimonialsCarousel" class="carousel slide px-5 mx-4" data-bs-ride="carousel" data-bs-interval="5000">
             <div class="carousel-inner">
 
                 <!-- Slide 1 -->
@@ -179,21 +158,21 @@
                             <div class="testimonial-card">
                                 <div class="stars">★★★★★</div>
                                 <p>"Ben fixed my Wi-Fi issue in one call out. I am now able to get iPlayer on my TV again. Best £50 I have spent during lockdown."</p>
-                                <strong>Barbara Elliott</strong>
+                                <strong class="testimonial-name">Barbara Elliott</strong>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="testimonial-card">
                                 <div class="stars">★★★★★</div>
                                 <p>"Ben is completely reliable, honest, professionally competent & able. The set up he has created is without fault and works well for the first time ever."</p>
-                                <strong>Sue Davidson</strong>
+                                <strong class="testimonial-name">Sue Davidson</strong>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="testimonial-card">
                                 <div class="stars">★★★★★</div>
                                 <p>"The Tech Whizz found me an incredible mobile deal and talked me through transferring everything over without disruption."</p>
-                                <strong>Lydia Johnstone</strong>
+                                <strong class="testimonial-name">Lydia Johnstone</strong>
                             </div>
                         </div>
                     </div>
@@ -205,22 +184,22 @@
                         <div class="col-md-4">
                             <div class="testimonial-card">
                                 <div class="stars">★★★★★</div>
-                                <p>"Absolutely brilliant service. Ben sorted our smart home setup quickly and explained everything clearly. Highly recommended!"</p>
-                                <strong>Pam H</strong>
+                                <p>"Ben came last April and sorted out the WiFi in our house to give us one system throughout. It has all worked extremely well and we are very pleased with it. Ben has also given me extra support and help when the telephone land line was changed to digital and we changed broadband providers. I would certainly recommend him to family and friends."</p>
+                                <strong class="testimonial-name">Fiona M</strong>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="testimonial-card">
                                 <div class="stars">★★★★★</div>
-                                <p>"Ben was professional, friendly and really knowledgeable. He sorted our broadband issues within the hour. Will definitely use again."</p>
-                                <strong>Fiona M</strong>
+                                <p>"I found Ben after a google search; I was looking for someone to help improve the WiFi signal in our house as the current system was not working reliably. Ben came and had a look at what we have installed before advising two different options for us. We went with his recommendation and now enjoy a good WiFi signal throughout the property. In addition, I found Ben to be very polite, neat and reliable. I have no hesitation in recommending him to other potential customers."</p>
+                                <strong class="testimonial-name">Camilla W</strong>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="testimonial-card">
                                 <div class="stars">★★★★★</div>
-                                <p>"Fantastic service, very patient and helpful. Ben set up our whole home network and it works perfectly. Can't thank him enough."</p>
-                                <strong>Camilla W</strong>
+                                <p>"Thank you for setting me up on my new laptop, everything is working perfectly and it has made my life so much easier. I will be sure to recommend you to friends and family. Thank you again for excellent service."</p>
+                                <strong class="testimonial-name">Lisa W</strong>
                             </div>
                         </div>
                     </div>
@@ -232,22 +211,22 @@
                         <div class="col-md-4">
                             <div class="testimonial-card">
                                 <div class="stars">★★★★★</div>
-                                <p>"Ben came out the same day and fixed our Wi-Fi dead zones. The house is now fully connected. Brilliant service at a great price."</p>
-                                <strong>Lisa W</strong>
+                                <p>"Just a quick note to thank you for your home visit on Friday. I found the session very helpful and worth while, and was relieved to find that my 20-year-old digital camera is not incompatible with this new laptop. By being willing to resolve people's home computing queries on site, you are providing a wonderful service."</p>
+                                <strong class="testimonial-name">Stephanie H</strong>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="testimonial-card">
                                 <div class="stars">★★★★★</div>
-                                <p>"Really impressed with The Tech Whizz. Ben is professional, efficient and very reasonably priced. Would highly recommend to anyone."</p>
-                                <strong>Stephanie H</strong>
+                                <p>"I approached Ben to undertake work updating software on my home iMac and expanding the hardware to include a scanner. Ben proved himself to be knowledgeable and very capable, undertaking works in a timely manner for a fair price. Ben has great interpersonal skills and ensured I understood what he proposed and the costs involved before completing the tasks. I have no reservations in recommending him to anyone."</p>
+                                <strong class="testimonial-name">Julian S</strong>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="testimonial-card">
                                 <div class="stars">★★★★★</div>
-                                <p>"Excellent service from start to finish. Ben installed our CCTV and smart home system perfectly. Very professional and tidy."</p>
-                                <strong>Julian S</strong>
+                                <p>"We have lived in Wood Street for 48 years and discovered Ben a few years ago. He has been very efficient and reliable in sorting out all our IT problems, and quickly. We struggle with IT and he has been so kind and helpful each time we contact him. We have no hesitation in recommending him to anyone who needs assistance at our level or anyone who requires more specialist help."</p>
+                                <strong class="testimonial-name">Pam H</strong>
                             </div>
                         </div>
                     </div>
