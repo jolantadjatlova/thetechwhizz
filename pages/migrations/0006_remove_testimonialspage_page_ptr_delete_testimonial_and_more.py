@@ -1,10 +1,21 @@
-from django.db import migrations, connection
+from django.db import migrations
 
 
-def drop_testimonials_cascade(apps, schema_editor):
-    with connection.cursor() as cursor:
-        cursor.execute("DROP TABLE IF EXISTS pages_testimonial CASCADE;")
-        cursor.execute("DROP TABLE IF EXISTS pages_testimonialspage CASCADE;")
+def drop_testimonials(apps, schema_editor):
+    db = schema_editor.connection.vendor
+    with schema_editor.connection.cursor() as cursor:
+        if db == 'postgresql':
+            cursor.execute("DROP TABLE IF EXISTS pages_testimonial CASCADE;")
+            cursor.execute("DROP TABLE IF EXISTS pages_testimonialspage CASCADE;")
+        else:
+            try:
+                cursor.execute("DROP TABLE IF EXISTS pages_testimonial;")
+            except Exception:
+                pass
+            try:
+                cursor.execute("DROP TABLE IF EXISTS pages_testimonialspage;")
+            except Exception:
+                pass
 
 
 class Migration(migrations.Migration):
@@ -14,5 +25,5 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RunPython(drop_testimonials_cascade, migrations.RunPython.noop),
+        migrations.RunPython(drop_testimonials, migrations.RunPython.noop),
     ]
