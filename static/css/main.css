@@ -219,18 +219,19 @@ h1, h2, h3 {
 /* ===== SERVICE CARDS WHITE STYLE ===== */
 .service-card-white {
     background-color: #ffffff;
-    border: 1px solid #e8e8e8;
+    border: 2px solid rgba(51, 194, 224, 0.3);
     border-radius: 12px;
     padding: 28px 20px;
     text-align: center;
     height: calc(100% - 16px);
     margin-bottom: 16px;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
 }
 
 .service-card-white:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(51, 194, 224, 0.15);
+    border-color: var(--cyan);
 }
 
 .service-card-white i {
