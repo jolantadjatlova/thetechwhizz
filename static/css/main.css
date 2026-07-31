@@ -241,10 +241,11 @@ h1, h2, h3 {
     display: block;
 }
 
-.service-card-white h5 {
+.service-card-white h3 {
     color: #1a1a2e;
     font-weight: 700;
     margin-bottom: 10px;
+    font-size: 1.15rem;
 }
 
 .service-card-white p {
@@ -379,9 +380,10 @@ h1, h2, h3 {
 
 .carousel-indicators button {
     background-color: var(--navy-light) !important;
-    width: 10px !important;
-    height: 10px !important;
+    width: 14px !important;
+    height: 14px !important;
     border-radius: 50%;
+    margin: 0 6px;
 }
 
 .carousel-indicators button.active {
@@ -394,6 +396,11 @@ h1, h2, h3 {
     filter: invert(1) grayscale(100) brightness(0.3);
     width: 2rem;
     height: 2rem;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 44px;
 }
 
 #testimonialsCarousel .carousel-control-prev {
