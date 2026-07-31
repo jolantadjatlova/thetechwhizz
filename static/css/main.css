@@ -269,6 +269,30 @@ h1, h2, h3 {
     border-radius: 8px;
 }
 
+/* ===== CONTENT CARD (Privacy Policy, etc.) ===== */
+.content-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    padding: 40px;
+    color: #444;
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+.content-card h3,
+.content-card h4 {
+    color: #1a1a2e;
+    font-weight: 700;
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
+
+.content-card h3:first-child,
+.content-card h4:first-child {
+    margin-top: 0;
+}
+
 /* ===== SCROLL REVEAL ANIMATION ===== */
 .reveal-on-scroll {
     opacity: 0;
@@ -295,6 +319,26 @@ h1, h2, h3 {
     position: relative;
     box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     margin: 0 auto;
+}
+
+.testimonial-card::before {
+    content: '\201C';
+    position: absolute;
+    top: 0px;
+    left: 15px;
+    font-size: 140px;
+    font-family: Georgia, 'Times New Roman', serif;
+    color: rgba(255, 255, 255, 0.45);
+    line-height: 1;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.testimonial-card .stars,
+.testimonial-card p,
+.testimonial-card .testimonial-name {
+    position: relative;
+    z-index: 1;
 }
 
 .testimonial-card i.bi-quote {
