@@ -18,7 +18,7 @@
                 {% if forloop.counter|divisibleby:2 %}
                     <!-- Even: text left, image right -->
                     <div class="col-md-7 p-4">
-                        <h3 style="color: var(--cyan); font-weight: 700;">{{ service.title }}</h3>
+                        <h3 style="color: var(--cyan-text); font-weight: 700;">{{ service.title }}</h3>
                         <div style="color: #444;">{{ service.body|richtext }}</div>
                     </div>
                     <div class="col-md-5">
@@ -34,7 +34,7 @@
                         {% endif %}
                     </div>
                     <div class="col-md-7 p-4">
-                        <h3 style="color: var(--cyan); font-weight: 700;">{{ service.title }}</h3>
+                        <h3 style="color: var(--cyan-text); font-weight: 700;">{{ service.title }}</h3>
                         <div style="color: #444;">{{ service.body|richtext }}</div>
                     </div>
                 {% endif %}

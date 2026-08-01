@@ -5,6 +5,7 @@
     --navy-mid: #16314f;
     --navy-light: #1b4965;
     --cyan: #33c2e0;
+    --cyan-text: #0e7f9a;
     --whatsapp-green: #25D366;
     --white: #ffffff;
     --grey: #b9cfdc;
@@ -54,12 +55,12 @@ h1, h2, h3 {
 
 .site-navbar .nav-link:hover,
 .site-navbar .nav-link.active {
-    color: var(--cyan) !important;
+    color: var(--cyan-text) !important;
 }
 
 .btn-call {
     background-color: var(--cyan);
-    color: #ffffff;
+    color: var(--navy);
     border: none;
     border-radius: 6px;
     padding: 10px 20px;
@@ -75,7 +76,7 @@ h1, h2, h3 {
 
 .btn-call:hover {
     opacity: 0.85;
-    color: #ffffff;
+    color: var(--navy);
 }
 
 /* ===== SERVICES DROPDOWN ===== */
@@ -98,16 +99,16 @@ h1, h2, h3 {
 .dropdown-item:hover,
 .dropdown-item:focus {
     background-color: rgba(51, 194, 224, 0.1);
-    color: var(--cyan);
+    color: var(--cyan-text);
 }
 
 .dropdown-item.fw-bold {
-    color: var(--cyan);
+    color: var(--cyan-text);
 }
 
 .dropdown-item.fw-bold:hover {
     background-color: rgba(51, 194, 224, 0.1);
-    color: var(--cyan);
+    color: var(--cyan-text);
 }
 
 .dropdown-divider {
@@ -128,7 +129,7 @@ h1, h2, h3 {
 /* ===== WHATSAPP BUTTON ===== */
 .btn-whatsapp {
     background-color: var(--cyan);
-    color: var(--white);
+    color: var(--navy);
     border: none;
     border-radius: 8px;
     font-weight: 600;
@@ -138,7 +139,7 @@ h1, h2, h3 {
 
 .btn-whatsapp:hover {
     opacity: 0.85;
-    color: var(--white);
+    color: var(--navy);
 }
 
 /* ===== HERO ===== */
@@ -226,6 +227,9 @@ h1, h2, h3 {
     height: calc(100% - 16px);
     margin-bottom: 16px;
     transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .service-card-white:hover {
@@ -246,6 +250,9 @@ h1, h2, h3 {
     font-weight: 700;
     margin-bottom: 10px;
     font-size: 1.15rem;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
 }
 
 .service-card-white p {
@@ -330,7 +337,7 @@ h1, h2, h3 {
     left: 15px;
     font-size: 140px;
     font-family: Georgia, 'Times New Roman', serif;
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(13, 27, 46, 0.18);
     line-height: 1;
     z-index: 0;
     pointer-events: none;
@@ -345,7 +352,7 @@ h1, h2, h3 {
 
 .testimonial-card i.bi-quote {
     font-size: 1.5rem;
-    color: rgba(255,255,255,0.6);
+    color: var(--navy);
     display: block;
     margin-bottom: 6px;
 }
@@ -353,7 +360,7 @@ h1, h2, h3 {
 .testimonial-card p {
     font-size: 0.8rem;
     line-height: 1.4;
-    color: #ffffff;
+    color: var(--navy);
 }
 
 .stars {
@@ -365,7 +372,7 @@ h1, h2, h3 {
 
 .testimonial-name {
     font-weight: 700;
-    color: #ffffff !important;
+    color: var(--navy) !important;
     margin-bottom: 0;
     font-size: 0.9rem;
 }
@@ -384,6 +391,17 @@ h1, h2, h3 {
     height: 14px !important;
     border-radius: 50%;
     margin: 0 6px;
+    position: relative;
+}
+
+.carousel-indicators button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
 }
 
 .carousel-indicators button.active {
@@ -401,6 +419,7 @@ h1, h2, h3 {
 .carousel-control-prev,
 .carousel-control-next {
     width: 44px;
+    height: 44px;
 }
 
 #testimonialsCarousel .carousel-control-prev {
@@ -443,7 +462,7 @@ h1, h2, h3 {
 }
 
 .section-white-angled .section-label {
-    color: var(--cyan);
+    color: var(--cyan-text);
 }
 
 .section-white-angled .section-title {
@@ -471,7 +490,8 @@ h1, h2, h3 {
     color: #8a9db5;
 }
 
-.site-footer h6 {
+.site-footer h6,
+.footer-heading {
     color: #ffffff;
     font-weight: 700;
     margin-bottom: 12px;
@@ -557,6 +577,25 @@ h1, h2, h3 {
     text-decoration: none;
     font-weight: 600;
     margin-left: 4px;
+}
+
+/* ===== SERVICE LINK BUTTON (Learn more, on white cards) ===== */
+.service-link-btn {
+    display: inline-block;
+    background-color: var(--cyan);
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 8px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: opacity 0.2s;
+    margin-top: auto;
+}
+
+.service-link-btn:hover {
+    opacity: 0.85;
+    color: var(--navy);
 }
 
 /* ===== SMALLER WHATSAPP BUBBLE ===== */
