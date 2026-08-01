@@ -52,7 +52,7 @@
                     </div>
                 </div>
                 <div class="google-review-line mt-3">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" style="width: 18px; height: 18px;" alt="Google">
+                    <img src="{% static 'images/google-logo.svg' %}" style="width: 18px; height: 18px;" alt="Google">
                     <span class="stars-inline">★★★★★</span>
                     Rated 5.0 by our customers
                     <a href="https://share.google/DEr6RrDLYbzDpUSyg" target="_blank">See our reviews →</a>
@@ -62,7 +62,7 @@
     </div>
 
     <a href="https://wa.me/447359107625" target="_blank" class="whatsapp-bubble-small" aria-label="Chat on WhatsApp">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        <img src="{% static 'images/whatsapp-icon.svg' %}" alt="WhatsApp">
         <span>Chat on WhatsApp</span>
     </a>
 </section>
@@ -146,21 +146,39 @@
                     <div class="row g-4">
                         <div class="col-md-4">
                             <div class="testimonial-card">
-                                <div class="stars">★★★★★</div>
+                                <div class="stars" aria-label="5 out of 5 stars">
+                                    <i class="bi bi-star-fill" aria-hidden="true"></i>
+                                    <i class="bi bi-star-fill" aria-hidden="true"></i>
+                                    <i class="bi bi-star-fill" aria-hidden="true"></i>
+                                    <i class="bi bi-star-fill" aria-hidden="true"></i>
+                                    <i class="bi bi-star-fill" aria-hidden="true"></i>
+                                </div>
                                 <p>"Ben came last April and sorted out the WiFi in our house to give us one system throughout. It has all worked extremely well and we are very pleased with it. Ben has also given me extra support and help when the telephone land line was changed to digital and we changed broadband providers. I would certainly recommend him to family and friends."</p>
                                 <strong class="testimonial-name">Fiona M</strong>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="testimonial-card">
-                                <div class="stars">★★★★★</div>
+                                <div class="stars" aria-label="5 out of 5 stars">
+                                    <i class="bi bi-star-fill" aria-hidden="true"></i>
+                                    <i class="bi bi-star-fill" aria-hidden="true"></i>
+                                    <i class="bi bi-star-fill" aria-hidden="true"></i>
+                                    <i class="bi bi-star-fill" aria-hidden="true"></i>
+                                    <i class="bi bi-star-fill" aria-hidden="true"></i>
+                                </div>
                                 <p>"I found Ben after a google search; I was looking for someone to help improve the WiFi signal in our house as the current system was not working reliably. Ben came and had a look at what we have installed before advising two different options for us. We went with his recommendation and now enjoy a good WiFi signal throughout the property. In addition, I found Ben to be very polite, neat and reliable. I have no hesitation in recommending him to other potential customers."</p>
                                 <strong class="testimonial-name">Camilla W</strong>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="testimonial-card">
-                                <div class="stars">★★★★★</div>
+                                <div class="stars" aria-label="5 out of 5 stars">
+                                    <i class="bi bi-star-fill" aria-hidden="true"></i>
+                                    <i class="bi bi-star-fill" aria-hidden="true"></i>
+                                    <i class="bi bi-star-fill" aria-hidden="true"></i>
+                                    <i class="bi bi-star-fill" aria-hidden="true"></i>
+                                    <i class="bi bi-star-fill" aria-hidden="true"></i>
+                                </div>
                                 <p>"Thank you for setting me up on my new laptop, everything is working perfectly and it has made my life so much easier. I will be sure to recommend you to friends and family. Thank you again for excellent service."</p>
                                 <strong class="testimonial-name">Lisa W</strong>
                             </div>
@@ -173,21 +191,39 @@
                     <div class="row g-4">
                         <div class="col-md-4">
                             <div class="testimonial-card">
-                                <div class="stars">★★★★★</div>
+                                <div class="stars" aria-label="5 out of 5 stars">
+                                    <i class="bi bi-star-fill" aria-hidden="true"></i>
+                                    <i class="bi bi-star-fill" aria-hidden="true"></i>
+                                    <i class="bi bi-star-fill" aria-hidden="true"></i>
+                                    <i class="bi bi-star-fill" aria-hidden="true"></i>
+                                    <i class="bi bi-star-fill" aria-hidden="true"></i>
+                                </div>
                                 <p>"Just a quick note to thank you for your home visit on Friday. I found the session very helpful and worth while, and was relieved to find that my 20-year-old digital camera is not incompatible with this new laptop. By being willing to resolve people's home computing queries on site, you are providing a wonderful service."</p>
                                 <strong class="testimonial-name">Stephanie H</strong>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="testimonial-card">
-                                <div class="stars">★★★★★</div>
+                                <div class="stars" aria-label="5 out of 5 stars">
+                                    <i class="bi bi-star-fill" aria-hidden="true"></i>
+                                    <i class="bi bi-star-fill" aria-hidden="true"></i>
+                                    <i class="bi bi-star-fill" aria-hidden="true"></i>
+                                    <i class="bi bi-star-fill" aria-hidden="true"></i>
+                                    <i class="bi bi-star-fill" aria-hidden="true"></i>
+                                </div>
                                 <p>"I approached Ben to undertake work updating software on my home iMac and expanding the hardware to include a scanner. Ben proved himself to be knowledgeable and very capable, undertaking works in a timely manner for a fair price. Ben has great interpersonal skills and ensured I understood what he proposed and the costs involved before completing the tasks. I have no reservations in recommending him to anyone."</p>
                                 <strong class="testimonial-name">Julian S</strong>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="testimonial-card">
-                                <div class="stars">★★★★★</div>
+                                <div class="stars" aria-label="5 out of 5 stars">
+                                    <i class="bi bi-star-fill" aria-hidden="true"></i>
+                                    <i class="bi bi-star-fill" aria-hidden="true"></i>
+                                    <i class="bi bi-star-fill" aria-hidden="true"></i>
+                                    <i class="bi bi-star-fill" aria-hidden="true"></i>
+                                    <i class="bi bi-star-fill" aria-hidden="true"></i>
+                                </div>
                                 <p>"We have lived in Wood Street for 48 years and discovered Ben a few years ago. He has been very efficient and reliable in sorting out all our IT problems, and quickly. We struggle with IT and he has been so kind and helpful each time we contact him. We have no hesitation in recommending him to anyone who needs assistance at our level or anyone who requires more specialist help."</p>
                                 <strong class="testimonial-name">Pam H</strong>
                             </div>
