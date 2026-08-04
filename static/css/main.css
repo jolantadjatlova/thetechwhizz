@@ -350,7 +350,10 @@ h1, h2, h3 {
     }
 
     #testimonialsCarousel .carousel-item {
-        display: block;
+        display: none;
+        float: none;
+        width: auto;
+        margin-right: 0;
         flex: 0 0 calc(33.333% - 14px);
         max-width: calc(33.333% - 14px);
     }
@@ -358,6 +361,15 @@ h1, h2, h3 {
     #testimonialsCarousel .carousel-item-next,
     #testimonialsCarousel .carousel-item-prev,
     #testimonialsCarousel .carousel-item.active {
+        display: block;
+    }
+
+    #testimonialsCarousel .carousel-item.active ~ .carousel-item {
+        display: none;
+    }
+
+    #testimonialsCarousel .carousel-item.active + .carousel-item,
+    #testimonialsCarousel .carousel-item.active + .carousel-item + .carousel-item {
         display: block;
     }
 
