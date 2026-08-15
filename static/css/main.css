@@ -39,10 +39,6 @@ h1, h2, h3 {
     width: auto;
 }
 
-.site-navbar .container {
-    padding-left: 0px;
-}
-
 .site-navbar .nav-link {
     color: #1a1a2e !important;
     font-weight: 600;
@@ -735,11 +731,6 @@ html, body {
     .site-navbar .navbar-brand img {
         height: 50px !important;
         width: 87px !important;
-    }
-
-    .site-navbar .container-fluid {
-        padding-left: 12px;
-        padding-right: 12px;
     }
 
     .navbar-toggler {
