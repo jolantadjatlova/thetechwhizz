@@ -344,51 +344,6 @@ h1, h2, h3 {
 }
 
 @media (min-width: 768px) {
-    #testimonialsCarousel .carousel-inner {
-        display: flex;
-        gap: 20px;
-    }
-
-    #testimonialsCarousel .carousel-item {
-        display: none;
-        float: none;
-        width: auto;
-        margin-right: 0;
-        flex: 0 0 calc(33.333% - 14px);
-        max-width: calc(33.333% - 14px);
-    }
-
-    #testimonialsCarousel .carousel-item-next,
-    #testimonialsCarousel .carousel-item-prev,
-    #testimonialsCarousel .carousel-item.active {
-        display: block;
-    }
-
-    #testimonialsCarousel .carousel-item.active ~ .carousel-item {
-        display: none;
-    }
-
-    #testimonialsCarousel .carousel-item.active + .carousel-item,
-    #testimonialsCarousel .carousel-item.active + .carousel-item + .carousel-item {
-        display: block;
-    }
-
-    #testimonialsCarousel .carousel-item-start.active,
-    #testimonialsCarousel .carousel-item-prev:not(.carousel-item-end) {
-        transform: translateX(0);
-    }
-
-    #testimonialsCarousel .carousel-item-end.active,
-    #testimonialsCarousel .carousel-item-next:not(.carousel-item-start) {
-        transform: translateX(0);
-    }
-
-    #testimonialsCarousel .carousel-item-next,
-    #testimonialsCarousel .carousel-item-prev {
-        position: relative;
-        transform: translateX(0);
-    }
-
     .testimonial-card {
         max-width: none;
     }
@@ -439,6 +394,7 @@ h1, h2, h3 {
     color: var(--navy) !important;
     margin-bottom: 0;
     font-size: 0.9rem;
+    margin-top: auto;
 }
 
 #testimonials .section-title {
@@ -483,8 +439,8 @@ h1, h2, h3 {
     height: 2rem;
 }
 
-#testimonialsCarousel .carousel-control-prev,
-#testimonialsCarousel .carousel-control-next {
+.testimonials-carousel .carousel-control-prev,
+.testimonials-carousel .carousel-control-next {
     top: 140px;
     bottom: auto;
     width: 44px;
@@ -492,11 +448,11 @@ h1, h2, h3 {
     transform: translateY(-50%);
 }
 
-#testimonialsCarousel .carousel-control-prev {
+.testimonials-carousel .carousel-control-prev {
     left: -60px;
 }
 
-#testimonialsCarousel .carousel-control-next {
+.testimonials-carousel .carousel-control-next {
     right: -60px;
 }
 
@@ -708,19 +664,19 @@ html, body {
         scroll-margin-top: var(--navbar-height, 90px);
     }
 
-    #testimonialsCarousel {
+    .testimonials-carousel {
         padding-left: 36px !important;
         padding-right: 36px !important;
         margin-left: 0 !important;
         margin-right: 0 !important;
     }
 
-    #testimonialsCarousel .carousel-control-prev {
+    .testimonials-carousel .carousel-control-prev {
         left: 0;
         width: 36px;
     }
 
-    #testimonialsCarousel .carousel-control-next {
+    .testimonials-carousel .carousel-control-next {
         right: 0;
         width: 36px;
     }

@@ -138,113 +138,80 @@
             <h2 class="section-title">Testimonials</h2>
         </div>
 
-        <div id="testimonialsCarousel" class="carousel slide" data-bs-wrap="false">
+        <!-- DESKTOP: 3 per slide -->
+        <div id="testimonialsDesktop" class="carousel slide testimonials-carousel d-none d-md-block" data-bs-ride="carousel" data-bs-interval="6000">
             <div class="carousel-inner">
-
-                <div class="carousel-item active">
-                    <div class="testimonial-card mx-auto">
-                        <div class="stars" role="img" aria-label="5 out of 5 stars">
-                            <i class="bi bi-star-fill" aria-hidden="true"></i>
-                            <i class="bi bi-star-fill" aria-hidden="true"></i>
-                            <i class="bi bi-star-fill" aria-hidden="true"></i>
-                            <i class="bi bi-star-fill" aria-hidden="true"></i>
-                            <i class="bi bi-star-fill" aria-hidden="true"></i>
+                {% for group in page.testimonial_groups %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                    <div class="row g-4">
+                        {% for testimonial in group %}
+                        <div class="col-md-4">
+                            <div class="testimonial-card">
+                                <div class="stars" role="img" aria-label="{{ testimonial.rating }} out of 5 stars">
+                                    {% for i in "12345" %}
+                                        {% if forloop.counter <= testimonial.rating %}
+                                            <i class="bi bi-star-fill" aria-hidden="true"></i>
+                                        {% else %}
+                                            <i class="bi bi-star" aria-hidden="true"></i>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                                <p>{{ testimonial.quote }}</p>
+                                <strong class="testimonial-name">{{ testimonial.name }}{% if testimonial.location %}, {{ testimonial.location }}{% endif %}</strong>
+                            </div>
                         </div>
-                        <p>"Ben came last April and sorted out the WiFi in our house to give us one system throughout. It has all worked extremely well and we are very pleased with it. Ben has also given me extra support and help when the telephone land line was changed to digital and we changed broadband providers. I would certainly recommend him to family and friends."</p>
-                        <strong class="testimonial-name">Fiona M</strong>
+                        {% endfor %}
                     </div>
                 </div>
-
-                <div class="carousel-item">
-                    <div class="testimonial-card mx-auto">
-                        <div class="stars" role="img" aria-label="5 out of 5 stars">
-                            <i class="bi bi-star-fill" aria-hidden="true"></i>
-                            <i class="bi bi-star-fill" aria-hidden="true"></i>
-                            <i class="bi bi-star-fill" aria-hidden="true"></i>
-                            <i class="bi bi-star-fill" aria-hidden="true"></i>
-                            <i class="bi bi-star-fill" aria-hidden="true"></i>
-                        </div>
-                        <p>"I found Ben after a google search; I was looking for someone to help improve the WiFi signal in our house as the current system was not working reliably. Ben came and had a look at what we have installed before advising two different options for us. We went with his recommendation and now enjoy a good WiFi signal throughout the property. In addition, I found Ben to be very polite, neat and reliable. I have no hesitation in recommending him to other potential customers."</p>
-                        <strong class="testimonial-name">Camilla W</strong>
-                    </div>
-                </div>
-
-                <div class="carousel-item">
-                    <div class="testimonial-card mx-auto">
-                        <div class="stars" role="img" aria-label="5 out of 5 stars">
-                            <i class="bi bi-star-fill" aria-hidden="true"></i>
-                            <i class="bi bi-star-fill" aria-hidden="true"></i>
-                            <i class="bi bi-star-fill" aria-hidden="true"></i>
-                            <i class="bi bi-star-fill" aria-hidden="true"></i>
-                            <i class="bi bi-star-fill" aria-hidden="true"></i>
-                        </div>
-                        <p>"Thank you for setting me up on my new laptop, everything is working perfectly and it has made my life so much easier. I will be sure to recommend you to friends and family. Thank you again for excellent service."</p>
-                        <strong class="testimonial-name">Lisa W</strong>
-                    </div>
-                </div>
-
-                <div class="carousel-item">
-                    <div class="testimonial-card mx-auto">
-                        <div class="stars" role="img" aria-label="5 out of 5 stars">
-                            <i class="bi bi-star-fill" aria-hidden="true"></i>
-                            <i class="bi bi-star-fill" aria-hidden="true"></i>
-                            <i class="bi bi-star-fill" aria-hidden="true"></i>
-                            <i class="bi bi-star-fill" aria-hidden="true"></i>
-                            <i class="bi bi-star-fill" aria-hidden="true"></i>
-                        </div>
-                        <p>"Just a quick note to thank you for your home visit on Friday. I found the session very helpful and worth while, and was relieved to find that my 20-year-old digital camera is not incompatible with this new laptop. By being willing to resolve people's home computing queries on site, you are providing a wonderful service."</p>
-                        <strong class="testimonial-name">Stephanie H</strong>
-                    </div>
-                </div>
-
-                <div class="carousel-item">
-                    <div class="testimonial-card mx-auto">
-                        <div class="stars" role="img" aria-label="5 out of 5 stars">
-                            <i class="bi bi-star-fill" aria-hidden="true"></i>
-                            <i class="bi bi-star-fill" aria-hidden="true"></i>
-                            <i class="bi bi-star-fill" aria-hidden="true"></i>
-                            <i class="bi bi-star-fill" aria-hidden="true"></i>
-                            <i class="bi bi-star-fill" aria-hidden="true"></i>
-                        </div>
-                        <p>"I approached Ben to undertake work updating software on my home iMac and expanding the hardware to include a scanner. Ben proved himself to be knowledgeable and very capable, undertaking works in a timely manner for a fair price. Ben has great interpersonal skills and ensured I understood what he proposed and the costs involved before completing the tasks. I have no reservations in recommending him to anyone."</p>
-                        <strong class="testimonial-name">Julian S</strong>
-                    </div>
-                </div>
-
-                <div class="carousel-item">
-                    <div class="testimonial-card mx-auto">
-                        <div class="stars" role="img" aria-label="5 out of 5 stars">
-                            <i class="bi bi-star-fill" aria-hidden="true"></i>
-                            <i class="bi bi-star-fill" aria-hidden="true"></i>
-                            <i class="bi bi-star-fill" aria-hidden="true"></i>
-                            <i class="bi bi-star-fill" aria-hidden="true"></i>
-                            <i class="bi bi-star-fill" aria-hidden="true"></i>
-                        </div>
-                        <p>"We have lived in Wood Street for 48 years and discovered Ben a few years ago. He has been very efficient and reliable in sorting out all our IT problems, and quickly. We struggle with IT and he has been so kind and helpful each time we contact him. We have no hesitation in recommending him to anyone who needs assistance at our level or anyone who requires more specialist help."</p>
-                        <strong class="testimonial-name">Pam H</strong>
-                    </div>
-                </div>
-
+                {% endfor %}
             </div>
-
-            <!-- Controls -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="prev" aria-label="Previous testimonial">
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsDesktop" data-bs-slide="prev" aria-label="Previous testimonials">
                 <span class="carousel-control-prev-icon"></span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="next" aria-label="Next testimonial">
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialsDesktop" data-bs-slide="next" aria-label="Next testimonials">
                 <span class="carousel-control-next-icon"></span>
             </button>
-
-            <!-- Indicators -->
             <div class="carousel-indicators" style="position: relative; margin-top: 20px;">
-                <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="0" class="active" aria-label="Testimonial 1"></button>
-                <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="1" aria-label="Testimonial 2"></button>
-                <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="2" aria-label="Testimonial 3"></button>
-                <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="3" aria-label="Testimonial 4"></button>
-                <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="4" aria-label="Testimonial 5"></button>
-                <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="5" aria-label="Testimonial 6"></button>
+                {% for group in page.testimonial_groups %}
+                <button type="button" data-bs-target="#testimonialsDesktop" data-bs-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active"{% endif %} aria-label="Testimonials group {{ forloop.counter }}"></button>
+                {% endfor %}
             </div>
         </div>
+
+        <!-- MOBILE: 1 per slide -->
+        <div id="testimonialsMobile" class="carousel slide testimonials-carousel d-md-none" data-bs-ride="carousel" data-bs-interval="6000">
+            <div class="carousel-inner">
+                {% for testimonial in page.testimonials.all %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                    <div class="testimonial-card mx-auto">
+                        <div class="stars" role="img" aria-label="{{ testimonial.rating }} out of 5 stars">
+                            {% for i in "12345" %}
+                                {% if forloop.counter <= testimonial.rating %}
+                                    <i class="bi bi-star-fill" aria-hidden="true"></i>
+                                {% else %}
+                                    <i class="bi bi-star" aria-hidden="true"></i>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        <p>"{{ testimonial.quote }}"</p>
+                        <strong class="testimonial-name">{{ testimonial.name }}{% if testimonial.location %}, {{ testimonial.location }}{% endif %}</strong>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsMobile" data-bs-slide="prev" aria-label="Previous testimonial">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialsMobile" data-bs-slide="next" aria-label="Next testimonial">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+            <div class="carousel-indicators" style="position: relative; margin-top: 20px;">
+                {% for testimonial in page.testimonials.all %}
+                <button type="button" data-bs-target="#testimonialsMobile" data-bs-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active"{% endif %} aria-label="Testimonial {{ forloop.counter }}"></button>
+                {% endfor %}
+            </div>
+        </div>
+
     </div>
 </section>
 
