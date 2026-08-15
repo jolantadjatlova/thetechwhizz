@@ -60,11 +60,6 @@
             </div>
         </div>
     </div>
-
-    <a href="https://wa.me/447359107625" target="_blank" class="whatsapp-bubble-small" aria-label="Chat on WhatsApp">
-        <img src="{% static 'images/whatsapp-icon.svg' %}" width="22" height="22" alt="WhatsApp">
-        <span>Chat on WhatsApp</span>
-    </a>
 </section>
 
 <!-- Services Section -->
@@ -193,7 +188,7 @@
                                 {% endif %}
                             {% endfor %}
                         </div>
-                        <p>"{{ testimonial.quote }}"</p>
+                        <p>{{ testimonial.quote }}</p>
                         <strong class="testimonial-name">{{ testimonial.name }}{% if testimonial.location %}, {{ testimonial.location }}{% endif %}</strong>
                     </div>
                 </div>
