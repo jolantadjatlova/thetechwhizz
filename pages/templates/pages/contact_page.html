@@ -7,7 +7,7 @@
 <section class="section section-light" style="padding-top: 40px;">
     <div class="container">
         <div class="text-center mb-5">
-            <h2 class="section-title">Contact Us</h2>
+            <h1 class="section-title">Contact Us</h1>
         </div>
 
         <div class="row justify-content-center mb-5">
@@ -28,11 +28,11 @@
 
         <div class="row justify-content-center">
             <div class="col-lg-6">
-                <div class="contact-form">
+                <div class="contact-form content-card">
                     <form method="post">
                         {% csrf_token %}
                         {{ form|crispy }}
-                        <button type="submit" class="btn btn-whatsapp w-100 mt-3">Send Message</button>
+                        <button type="submit" class="btn btn-whatsapp mt-3">Send Message</button>
                     </form>
                 </div>
             </div>
