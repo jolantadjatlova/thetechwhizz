@@ -740,6 +740,13 @@ html, body {
     .navbar-toggler {
         flex-shrink: 0;
     }
+
+    .navbar-collapse .dropdown.ms-4 {
+        margin-left: 0 !important;
+        display: flex;
+        justify-content: center;
+        margin-top: 12px;
+    }
 }
 
 @media (max-width: 767px) {
