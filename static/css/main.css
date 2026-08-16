@@ -456,7 +456,7 @@ h1, h2, h3 {
 .section-white-angled {
     background-color: #ffffff;
     position: relative;
-    padding: 10px 0;
+    padding: 40px 0 10px 0;
 }
 
 .section-white-angled::before {
