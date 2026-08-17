@@ -262,6 +262,12 @@ h1, h2, h3 {
     border-color: var(--cyan);
 }
 
+@media (min-width: 768px) {
+    .service-card-white {
+        padding: 18px 14px;
+    }
+}
+
 .service-card-white i {
     font-size: 2.5rem;
     color: var(--cyan);
@@ -340,8 +346,8 @@ h1, h2, h3 {
 
 /* ===== TESTIMONIALS ===== */
 .testimonial-card {
-    background-color: var(--cyan);
-    border: none;
+    background-color: #ffffff;
+    border: 2px solid rgba(51, 194, 224, 0.3);
     border-radius: 12px;
     padding: 24px 20px;
     height: 280px;
@@ -368,7 +374,7 @@ h1, h2, h3 {
     left: 15px;
     font-size: 140px;
     font-family: Georgia, 'Times New Roman', serif;
-    color: rgba(13, 27, 46, 0.45);
+    color: rgba(51, 194, 224, 0.4);
     line-height: 1;
     z-index: 0;
     pointer-events: none;
@@ -795,5 +801,12 @@ html, body {
 
     .about-buttons {
         justify-content: center;
+    }
+
+    .service-card-white {
+        max-width: 340px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
     }
 }
