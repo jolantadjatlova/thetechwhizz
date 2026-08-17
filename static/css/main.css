@@ -138,6 +138,22 @@ h1, h2, h3 {
     color: var(--navy);
 }
 
+/* ===== OUTLINE BUTTON (white bg, matches service-card-white border/text) ===== */
+.btn-outline-cyan {
+    background-color: #ffffff;
+    color: #1a1a2e;
+    border: 2px solid rgba(51, 194, 224, 0.5);
+    border-radius: 8px;
+    font-weight: 700;
+    padding: 6px 24px;
+    transition: border-color 0.2s;
+}
+
+.btn-outline-cyan:hover {
+    border-color: var(--cyan);
+    color: #1a1a2e;
+}
+
 /* ===== HERO ===== */
 .hero {
     background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 55%, #14284f 100%);
@@ -771,5 +787,13 @@ html, body {
         width: clamp(180px, 60vw, 280px);
         height: clamp(180px, 60vw, 280px);
         margin: 0 auto 24px;
+    }
+
+    .trust-point-label {
+        font-size: 0.72rem !important;
+    }
+
+    .about-buttons {
+        justify-content: center;
     }
 }
