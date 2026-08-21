@@ -54,12 +54,29 @@
             localStorage.setItem('cookieConsent', 'accepted');
             document.getElementById('cookie-banner').style.display = 'none';
             loadGoogleAnalytics();
+            if (window.updateBubblePosition) window.updateBubblePosition();
         };
 
         window.declineCookies = function() {
             localStorage.setItem('cookieConsent', 'declined');
             document.getElementById('cookie-banner').style.display = 'none';
+            if (window.updateBubblePosition) window.updateBubblePosition();
         };
+
+        window.updateBubblePosition = function() {
+            var banner = document.getElementById('cookie-banner');
+            var bubble = document.querySelector('.whatsapp-bubble-small');
+            if (!bubble || !banner) return;
+            if (banner.style.display !== 'none' && banner.offsetHeight > 0) {
+                bubble.style.bottom = (banner.offsetHeight + 16) + 'px';
+            } else {
+                bubble.style.bottom = '';
+            }
+        };
+
+        window.addEventListener('resize', function() {
+            if (window.updateBubblePosition) window.updateBubblePosition();
+        });
     })();
     </script>
 
@@ -85,6 +102,7 @@
         if (localStorage.getItem('cookieConsent') === null) {
             document.getElementById('cookie-banner').style.display = 'block';
         }
+        if (window.updateBubblePosition) window.updateBubblePosition();
     </script>
 
     <!-- Navbar -->

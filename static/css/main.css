@@ -656,6 +656,7 @@ h1, h2, h3 {
     display: flex;
     align-items: center;
     gap: 8px;
+    transition: bottom 0.25s ease;
 }
 
 .whatsapp-bubble-small img {
