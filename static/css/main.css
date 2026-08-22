@@ -154,6 +154,28 @@ h1, h2, h3 {
     color: #1a1a2e;
 }
 
+/* ===== LATEST WORK FILTER PILLS ===== */
+.pill-filter {
+    background-color: #ffffff;
+    color: #1a1a2e;
+    border: 2px solid rgba(51, 194, 224, 0.5);
+    border-radius: 20px;
+    padding: 6px 18px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    transition: border-color 0.2s, background-color 0.2s, color 0.2s;
+}
+
+.pill-filter:hover {
+    border-color: var(--cyan);
+}
+
+.pill-filter.active {
+    background-color: var(--cyan);
+    border-color: var(--cyan);
+    color: var(--navy);
+}
+
 /* ===== HERO ===== */
 .hero {
     background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 55%, #14284f 100%);

@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block title %}Latest Work — The Tech Whizz{% endblock %}
+
+{% block content %}
+<section class="section section-light">
+    <div class="container">
+
+        <div class="text-center mb-4">
+            <h1 class="section-title">Latest Work</h1>
+            <div class="google-review-line justify-content-center" style="color: #555;">
+                {{ page.intro|richtext }}
+            </div>
+        </div>
+
+        {% with posts=page.get_children.live.specific %}
+
+        {% if posts %}
+        <!-- Filter pills (desktop) -->
+        <div class="d-none d-md-flex flex-wrap justify-content-center gap-2 mb-5" id="latestWorkFilters">
+            <button type="button" class="pill-filter active" data-filter="all">All Projects</button>
+            {% for value, label in latestwork_categories %}
+            <button type="button" class="pill-filter" data-filter="{{ value }}">{{ label }}</button>
+            {% endfor %}
+        </div>
+
+        <!-- Filter dropdown (mobile) -->
+        <div class="d-md-none mb-5">
+            <select id="latestWorkFilterSelect" class="form-select" style="border: 2px solid rgba(51, 194, 224, 0.5); border-radius: 8px; padding: 10px 14px; font-weight: 700; color: #1a1a2e;">
+                <option value="all">All Projects</option>
+                {% for value, label in latestwork_categories %}
+                <option value="{{ value }}">{{ label }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <!-- Project grid -->
+        <div class="row g-4 mb-5" id="latestWorkGrid">
+            {% for post in posts %}
+            <div class="col-md-6 col-lg-3 latest-work-card" data-category="{{ post.category }}">
+                <div class="service-box h-100">
+                    {% if post.main_image %}
+                        {% image post.main_image width-400 as post_img %}
+                        <img src="{{ post_img.url }}" alt="{{ post.title }}" class="service-box-img mb-3">
+                    {% endif %}
+                    <h3 style="color: #1a1a2e; font-weight: 700; font-size: 1.1rem; margin-bottom: 8px;">
+                        <a href="{% pageurl post %}" style="color: inherit; text-decoration: none;">{{ post.title }}</a>
+                    </h3>
+                    <p style="color: #666; font-size: 0.9rem; line-height: 1.5;">{{ post.intro }}</p>
+                    <div class="d-flex justify-content-between align-items-center mt-3" style="font-size: 0.8rem; color: #666;">
+                        {% if post.location %}
+                        <span><i class="bi bi-geo-alt"></i> {{ post.location }}</span>
+                        {% else %}
+                        <span></span>
+                        {% endif %}
+                        <span class="badge" style="background-color: rgba(51, 194, 224, 0.25); color: #1a1a2e; font-weight: 700; padding: 5px 10px; border-radius: 6px;">
+                            {{ post.get_category_display }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        {% else %}
+        <!-- Empty state -->
+        <div class="text-center" style="padding: 60px 20px;">
+            <i class="bi bi-tools" style="font-size: 2.5rem; color: var(--cyan); display: block; margin-bottom: 16px;"></i>
+            <h2 style="color: #1a1a2e; font-weight: 700; font-size: 1.4rem; margin-bottom: 10px;">Coming soon</h2>
+            <p style="color: #666; max-width: 480px; margin: 0 auto;">
+                We're putting together a showcase of our recent projects. Check back soon to see what we've been working on.
+            </p>
+        </div>
+        {% endif %}
+
+        {% endwith %}
+
+        <!-- Closing CTA -->
+        <div class="d-flex flex-wrap align-items-center justify-content-between gap-3" style="background-color: #ffffff; border: 2px solid rgba(51, 194, 224, 0.4); border-radius: 12px; padding: 14px 24px; max-width: 700px; margin: 0 auto;">
+            <p style="margin: 0; color: #444; display: flex; align-items: center; gap: 10px;">
+                <i class="bi bi-tools" style="color: var(--cyan); font-size: 1.1rem;"></i>
+                Have a project in mind? Let's discuss how we can help.
+            </p>
+            <a href="/contact/" class="btn btn-whatsapp px-4 py-2">Get in Touch →</a>
+        </div>
+
+    </div>
+</section>
+
+{% if posts %}
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var filters = document.querySelectorAll('#latestWorkFilters .pill-filter');
+    var select = document.getElementById('latestWorkFilterSelect');
+    var cards = document.querySelectorAll('#latestWorkGrid .latest-work-card');
+
+    function applyFilter(filter) {
+        cards.forEach(function (card) {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                card.style.display = '';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    filters.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            filters.forEach(function (b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+            var filter = btn.getAttribute('data-filter');
+            if (select) select.value = filter;
+            applyFilter(filter);
+        });
+    });
+
+    if (select) {
+        select.addEventListener('change', function () {
+            var filter = select.value;
+            filters.forEach(function (b) {
+                b.classList.toggle('active', b.getAttribute('data-filter') === filter);
+            });
+            applyFilter(filter);
+        });
+    }
+});
+</script>
+{% endif %}
+
+{% endblock content %}

@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block title %}{{ page.title }} — The Tech Whizz{% endblock %}
+
+{% block content %}
+<section class="section section-light">
+    <div class="container">
+
+        <div class="mb-4">
+            <a href="{{ page.get_parent.url }}" style="color: var(--cyan-text); text-decoration: none; font-weight: 600; font-size: 0.9rem;">
+                ← Back to Latest Work
+            </a>
+        </div>
+
+        <div class="service-box">
+            <div class="row align-items-center g-4">
+
+                <!-- Left: Content -->
+                <div class="col-lg-6">
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                        <span class="badge" style="background-color: rgba(51, 194, 224, 0.25); color: #1a1a2e; font-weight: 700; padding: 5px 12px; border-radius: 6px;">
+                            {{ page.get_category_display }}
+                        </span>
+                        {% if page.location %}
+                        <span style="color: #666; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 4px;">
+                            <i class="bi bi-geo-alt"></i> {{ page.location }}
+                        </span>
+                        {% endif %}
+                        <span style="color: #666; font-size: 0.85rem;">{{ page.date|date:"F Y" }}</span>
+                    </div>
+
+                    <h1 style="color: #1a1a2e; font-weight: 700; font-size: 1.6rem; margin-bottom: 12px;">{{ page.title }}</h1>
+
+                    <p style="color: #444; font-size: 1rem; line-height: 1.7;">{{ page.intro }}</p>
+
+                    {% if page.body %}
+                    <div style="color: #444; line-height: 1.8; margin-top: 16px; font-size: 0.95rem;">
+                        {{ page.body|richtext }}
+                    </div>
+                    {% endif %}
+                </div>
+
+                <!-- Right: Image -->
+                <div class="col-lg-6">
+                    {% if page.main_image %}
+                        {% image page.main_image width-600 as detail_img %}
+                        <img src="{{ detail_img.url }}" alt="{{ page.title }}" class="service-box-img">
+                    {% endif %}
+                </div>
+
+            </div>
+
+            <div class="mt-4 pt-4" style="border-top: 1px solid #e0e0e0;">
+                <p style="color: #444; margin-bottom: 12px;">Have a similar project in mind?</p>
+                <a href="/contact/" class="btn btn-whatsapp px-4 py-2">Get in Touch →</a>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+{% endblock content %}
