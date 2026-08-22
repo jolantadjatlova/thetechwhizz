@@ -546,7 +546,8 @@ h1, h2, h3 {
 }
 
 .contact-intro a {
-    color: var(--cyan-text);
+    color: var(--navy);
+    text-decoration: underline;
 }
 
 /* ===== FOOTER ===== */
