@@ -319,6 +319,42 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{% static 'js/main.js' %}"></script>
 
+    <!-- Conversion tracking -->
+    <script>
+    document.addEventListener('click', function (e) {
+        if (!window.gtag) return;
+
+        var telLink = e.target.closest('a[href^="tel:"]');
+        if (telLink) {
+            gtag('event', 'phone_click', {
+                event_category: 'engagement',
+                event_label: telLink.getAttribute('href'),
+                transport_type: 'beacon'
+            });
+            return;
+        }
+
+        var waLink = e.target.closest('a[href*="wa.me"]');
+        if (waLink) {
+            gtag('event', 'whatsapp_click', {
+                event_category: 'engagement',
+                event_label: waLink.getAttribute('href'),
+                transport_type: 'beacon'
+            });
+        }
+    });
+
+    document.addEventListener('submit', function (e) {
+        if (!window.gtag) return;
+        if (e.target.closest('.contact-form')) {
+            gtag('event', 'contact_form_submit', {
+                event_category: 'engagement',
+                transport_type: 'beacon'
+            });
+        }
+    });
+    </script>
+
     {% block extra_js %}{% endblock %}
 </body>
 </html>
