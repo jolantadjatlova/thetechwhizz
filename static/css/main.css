@@ -548,6 +548,7 @@ h1, h2, h3 {
 .contact-intro a {
     color: var(--navy);
     text-decoration: underline;
+    font-weight: 700;
 }
 
 /* ===== FOOTER ===== */
