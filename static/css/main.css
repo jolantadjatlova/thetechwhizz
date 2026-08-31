@@ -888,4 +888,19 @@ html, body {
         margin-right: auto;
         width: 100%;
     }
+
+    .latest-work-cta {
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
+        gap: 8px !important;
+    }
+
+    .latest-work-cta p {
+        font-size: 0.82rem !important;
+    }
+
+    .latest-work-cta .btn {
+        padding: 6px 14px !important;
+        font-size: 0.82rem !important;
+    }
 }

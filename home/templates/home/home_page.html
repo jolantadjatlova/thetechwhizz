@@ -8,7 +8,7 @@
 <!-- Hero Section -->
 <section class="hero" style="position: relative; overflow: hidden;">
     <div class="hero-video-wrap">
-        <video autoplay muted loop playsinline class="hero-video" aria-hidden="true" role="presentation">
+        <video id="heroVideo" autoplay muted loop playsinline class="hero-video" aria-hidden="true" role="presentation">
             <source src="{% static 'videos/hero-smart-home.mp4' %}" type="video/mp4">
         </video>
     </div>
@@ -45,16 +45,12 @@
                         <i class="bi bi-shield-check"></i>
                         <div><strong>Expert Support</strong></div>
                     </div>
-                    <div class="trust-badge">
-                        <i class="bi bi-star"></i>
-                        <div><strong>5<span style="color: #ffe066;">★</span> Rated</strong></div>
-                    </div>
                 </div>
                 <div class="google-review-line mt-3">
                     <img src="{% static 'images/google-logo.svg' %}" width="18" height="18" style="width: 18px; height: 18px;" alt="Google">
                     <span class="stars-inline">★★★★★</span>
                     Rated 5.0 by our customers
-                    <a href="https://share.google/9fvpcKmyEoNLFIkCU" target="_blank">See our reviews →</a>
+                    <a href="https://www.google.com/maps/place/The+Tech+Whizz/@51.238852,-0.6315177,11z/data=!3m1!4b1!4m6!3m5!1s0x4875d183200b4ee9:0x92c0399023b11f17!8m2!3d51.238852!4d-0.6315177!16s%2Fg%2F11lgsk925l?entry=ttu&g_ep=EgoyMDI2MDgyNi4wIKXMDSoASAFQAw%3D%3D" target="_blank">See our reviews →</a>
                 </div>
             </div>
         </div>
@@ -210,3 +206,19 @@
 </section>
 
 {% endblock content %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var v = document.getElementById('heroVideo');
+    if (v) {
+        v.muted = true;
+        var tryPlay = function () { v.play().catch(function(){}); };
+        tryPlay();
+        document.addEventListener('visibilitychange', function () {
+            if (!document.hidden) tryPlay();
+        });
+    }
+});
+</script>
+{% endblock extra_js %}
