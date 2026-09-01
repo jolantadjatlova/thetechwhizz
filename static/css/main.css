@@ -71,7 +71,7 @@ h1, h2, h3 {
 }
 
 .btn-call:hover {
-    background-color: #ffffff;
+    filter: brightness(0.88);
     color: var(--navy);
 }
 
@@ -136,6 +136,18 @@ h1, h2, h3 {
 .btn-whatsapp:hover {
     background-color: #ffffff;
     color: var(--navy);
+}
+
+.contact-submit-btn:hover {
+    background-color: var(--cyan);
+    filter: brightness(0.88);
+    color: var(--navy);
+}
+
+.light-bg-btn:hover {
+    background-color: var(--cyan) !important;
+    filter: brightness(0.88);
+    color: var(--navy) !important;
 }
 
 /* ===== OUTLINE BUTTON (white bg, matches service-card-white border/text) ===== */
@@ -684,7 +696,7 @@ h1, h2, h3 {
 }
 
 .service-link-btn:hover {
-    background-color: #ffffff;
+    filter: brightness(0.88);
     color: var(--navy);
 }
 
