@@ -34,12 +34,15 @@ cloudinary.config(
     secure=True,
 )
 
-# SendGrid handles contact form email sending.
-SENDGRID_API_KEY = os.environ.get("SENDGRID_API_KEY", "")
+# Brevo handles contact form email sending.
+BREVO_API_KEY = os.environ.get("BREVO_API_KEY", "")
 DEFAULT_FROM_EMAIL = "info@thetechwhizz.co.uk"
 
-if SENDGRID_API_KEY:
-    EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
+if BREVO_API_KEY:
+    EMAIL_BACKEND = "anymail.backends.brevo.EmailBackend"
+    ANYMAIL = {
+        "BREVO_API_KEY": BREVO_API_KEY,
+    }
 else:
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
